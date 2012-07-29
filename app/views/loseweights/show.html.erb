@@ -1,25 +1,29 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Weight:</b>
+  <b>体重:</b>
   <%= @loseweight.weight %>
 </p>
 
 <p>
-  <b>Hipline:</b>
+  <b>臀围:</b>
   <%= @loseweight.hipline %>
 </p>
 
 <p>
-  <b>Legline:</b>
+  <b>大腿围:</b>
   <%= @loseweight.legline %>
 </p>
 
 <p>
-  <b>Update date:</b>
+  <b>更新日期:</b>
   <%= @loseweight.update_date %>
 </p>
 
+<p>
+  <b>备注:</b>
+  <%= @loseweight.remark %>
+</p>
 
-<%= link_to 'Edit', edit_loseweight_path(@loseweight) %> |
-<%= link_to 'Back', loseweights_path %>
+<%= link_to '编辑', edit_loseweight_path(@loseweight) %> |
+<%= link_to '后退', loseweights_path %>

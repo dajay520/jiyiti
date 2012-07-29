@@ -12,22 +12,26 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :weight %><br />
+    体重：<br />
     <%= f.text_field :weight %>
   </div>
   <div class="field">
-    <%= f.label :hipline %><br />
+    臀围：<br />
     <%= f.text_field :hipline %>
   </div>
   <div class="field">
-    <%= f.label :legline %><br />
+    大腿内侧围：<br />
     <%= f.text_field :legline %>
   </div>
   <div class="field">
-    <%= f.label :update_date %><br />
+    日期：<br />
     <%= f.date_select :update_date %>
   </div>
+  <div class="field">
+    备注：<br />
+    <%= f.text_area :remark %>
+  </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit("提交") %>
   </div>
 <% end %>

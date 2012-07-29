@@ -1,3 +1,4 @@
+#encoding: UTF-8
 class LoseweightsController < ApplicationController
   # GET /loseweights
   # GET /loseweights.json
@@ -44,7 +45,7 @@ class LoseweightsController < ApplicationController
 
     respond_to do |format|
       if @loseweight.save
-        format.html { redirect_to @loseweight, notice: 'Loseweight was successfully created.' }
+        format.html { redirect_to @loseweight, notice: '新建日志成功。蠢耸。' }
         format.json { render json: @loseweight, status: :created, location: @loseweight }
       else
         format.html { render action: "new" }
@@ -60,7 +61,7 @@ class LoseweightsController < ApplicationController
 
     respond_to do |format|
       if @loseweight.update_attributes(params[:loseweight])
-        format.html { redirect_to @loseweight, notice: 'Loseweight was successfully updated.' }
+        format.html { redirect_to @loseweight, notice: '更新日志成功，小蠢耸.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
