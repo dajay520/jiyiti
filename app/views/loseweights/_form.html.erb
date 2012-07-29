@@ -1,0 +1,33 @@
+<%= form_for(@loseweight) do |f| %>
+  <% if @loseweight.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@loseweight.errors.count, "error") %> prohibited this loseweight from being saved:</h2>
+
+      <ul>
+      <% @loseweight.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.text_field :weight %>
+  </div>
+  <div class="field">
+    <%= f.label :hipline %><br />
+    <%= f.text_field :hipline %>
+  </div>
+  <div class="field">
+    <%= f.label :legline %><br />
+    <%= f.text_field :legline %>
+  </div>
+  <div class="field">
+    <%= f.label :update_date %><br />
+    <%= f.date_select :update_date %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

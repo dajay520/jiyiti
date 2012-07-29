@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Weight:</b>
+  <%= @loseweight.weight %>
+</p>
+
+<p>
+  <b>Hipline:</b>
+  <%= @loseweight.hipline %>
+</p>
+
+<p>
+  <b>Legline:</b>
+  <%= @loseweight.legline %>
+</p>
+
+<p>
+  <b>Update date:</b>
+  <%= @loseweight.update_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_loseweight_path(@loseweight) %> |
+<%= link_to 'Back', loseweights_path %>

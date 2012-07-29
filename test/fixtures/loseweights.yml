@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  weight: MyString
+  hipline: MyString
+  legline: MyString
+  update_date: 2012-07-29
+
+two:
+  weight: MyString
+  hipline: MyString
+  legline: MyString
+  update_date: 2012-07-29

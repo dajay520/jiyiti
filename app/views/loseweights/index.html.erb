@@ -1,0 +1,29 @@
+<h1>Listing loseweights</h1>
+
+<table>
+  <tr>
+    <th>Weight</th>
+    <th>Hipline</th>
+    <th>Legline</th>
+    <th>Update date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @loseweights.each do |loseweight| %>
+  <tr>
+    <td><%= loseweight.weight %></td>
+    <td><%= loseweight.hipline %></td>
+    <td><%= loseweight.legline %></td>
+    <td><%= loseweight.update_date %></td>
+    <td><%= link_to 'Show', loseweight %></td>
+    <td><%= link_to 'Edit', edit_loseweight_path(loseweight) %></td>
+    <td><%= link_to 'Destroy', loseweight, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Loseweight', new_loseweight_path %>
