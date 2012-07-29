@@ -20,7 +20,7 @@ class LoseweightsController < ApplicationController
       format.html # show.html.erb
       format.json { render json: @loseweight }
     end
-  end
+  end 
 
   # GET /loseweights/new
   # GET /loseweights/new.json
