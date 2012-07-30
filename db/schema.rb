@@ -11,16 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120729123036) do
+ActiveRecord::Schema.define(:version => 20120730124048) do
 
   create_table "loseweights", :force => true do |t|
     t.string   "weight"
     t.string   "hipline"
     t.string   "legline"
     t.date     "update_date"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
     t.string   "remark"
+    t.datetime "gmt_create"
+    t.datetime "gmt_modified"
   end
 
 end

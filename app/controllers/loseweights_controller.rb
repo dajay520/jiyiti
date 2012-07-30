@@ -42,7 +42,7 @@ class LoseweightsController < ApplicationController
   # POST /loseweights.json
   def create
     @loseweight = Loseweight.new(params[:loseweight])
-
+    @loseweight.gmt_create=Time.new.utc
     respond_to do |format|
       if @loseweight.save
         format.html { redirect_to @loseweight, notice: '新建日志成功。蠢耸。' }

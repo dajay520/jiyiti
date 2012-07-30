@@ -1,18 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5c24ea4b-08c4-4f06-9985-418b3855d4d6" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/reduce.iml" afterPath="$PROJECT_DIR$/.idea/reduce.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/loseweights_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/loseweights_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/loseweights/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/loseweights/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/loseweights/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/loseweights/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/loseweights/index.html.erb" afterPath="$PROJECT_DIR$/app/views/loseweights/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/loseweights/new.html.erb" afterPath="$PROJECT_DIR$/app/views/loseweights/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/loseweights/show.html.erb" afterPath="$PROJECT_DIR$/app/views/loseweights/show.html.erb" />
-    </list>
+    <list default="true" id="5c24ea4b-08c4-4f06-9985-418b3855d4d6" name="Default" comment="" />
     <ignored path="reduce.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -81,7 +70,7 @@
       <file leaf-file-name="loseweights_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/loseweights_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="19" selection-start="519" selection-end="519" vertical-scroll-proportion="0.0">
+            <state line="23" column="19" selection-start="521" selection-end="521" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -375,7 +364,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="recentsLimit" value="5" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
-    <property name="FullScreen" value="false" />
+    <property name="FullScreen" value="true" />
     <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
   </component>
@@ -640,7 +629,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/loseweights_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="19" selection-start="519" selection-end="519" vertical-scroll-proportion="0.0">
+        <state line="23" column="19" selection-start="521" selection-end="521" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
