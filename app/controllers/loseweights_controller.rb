@@ -1,5 +1,29 @@
 #encoding: UTF-8
 class LoseweightsController < ApplicationController
+  def authorize
+    if cookies[:remember_me]
+      puts 'admin tianjj'
+      session[:admin] = 'admin'
+    end
+    unless session[:admin] 
+      redirect_to :action=>:login
+    end
+  end
+  def login
+    pwd = params[:pwd]
+    if pwd=='7877435'
+      session[:admin] = 'admin'
+      puts 'test tianjj'
+      if params[:remember_me]
+        puts 'tianjj remember'
+        cookies[:remember_me]='admin'
+      end
+      
+      redirect_to "/loseweights"
+      
+    end
+    notice='密码不对，真蠢。'
+  end
   # GET /loseweights
   # GET /loseweights.json
   def index

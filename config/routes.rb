@@ -1,5 +1,10 @@
 Reduce::Application.routes.draw do
-  resources :loseweights
+  resources :loseweights do
+    collection do
+      post :login
+      get :login
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
