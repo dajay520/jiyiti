@@ -2,13 +2,28 @@
 <html>
 <head>
   <title>Reduce</title>
-  <%= stylesheet_link_tag    "style", :media => "all" %>
+  
+  <%= stylesheet_link_tag    "bootstrap-responsive", :media => "all" %>
+  <%= stylesheet_link_tag    "docs", :media => "all" %>
+  <%= stylesheet_link_tag    "styles", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
+  <!-- Navbar
+    ================================================== -->
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">
+          	小蠢耸的减肥日志
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+		<%= yield %>
+	</div>
 
 </body>
 </html>

@@ -1,6 +1,6 @@
-<h1>蠢耸的减肥日志</h1>
 
-<table id='tablecloth'>
+<table class="table table-bordered">
+	<thead>
   <tr>
     <th>重量</th>
     <th>臀围</th>
@@ -11,10 +11,9 @@
 		备注
 	</th>
     <th></th>
-    <th></th>
-    <th></th>
   </tr>
-
+</thead>
+<tbody>
 <% @loseweights.each do |loseweight| %>
   <tr>
     <td><%= loseweight.weight %></td>
@@ -25,13 +24,14 @@
 		loseweight.gmt_create.strftime('%Y-%m-%d %H:%M:%S') 
 		end %></td>
 	<td><%= loseweight.remark %></td>
-    <td><%= link_to '显示', loseweight %></td>
-    <td><%= link_to '编辑', edit_loseweight_path(loseweight) %></td>
-    <td><%= link_to '删除', loseweight, confirm: '确定要删除此项吗?', method: :delete %></td>
+    <td><%= link_to '显示', loseweight,:class=>"btn dropdown-toggle"  %>
+    <%= link_to '编辑', edit_loseweight_path(loseweight),:class=>"btn dropdown-toggle"  %>
+    <%= link_to '删除', loseweight, confirm: '确定要删除此项吗?', method: :delete,:class=>"btn dropdown-toggle"  %></td>
   </tr>
 <% end %>
+</tbody>
 </table>
 
 <br />
 
-<%= link_to '填写日志', new_loseweight_path %>
+<%= link_to '填写日志', new_loseweight_path,:class=>"btn dropdown-toggle" %>
