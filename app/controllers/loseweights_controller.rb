@@ -1,4 +1,5 @@
 #encoding: UTF-8
+require 'googlecharts'
 class LoseweightsController < ApplicationController
   def authorize
     if cookies[:remember_me]
@@ -28,7 +29,14 @@ class LoseweightsController < ApplicationController
   # GET /loseweights.json
   def index
     @loseweights = Loseweight.all
-
+    
+    data = []
+    @loseweights.each do |l|
+      data<<Integer(l.weight)
+    end
+    #data=[1,2,3,4]
+    @img_url = Gchart.line(:data => data, :size => '400x300', :line_colors => '0077CC',:axis_with_labels => ['y'])
+    #@img_url = Gchart.line(:data => [0, 40, 10, 70, 20],:axis_with_labels => ['y'])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @loseweights }
