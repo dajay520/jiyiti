@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="5c24ea4b-08c4-4f06-9985-418b3855d4d6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/reduce.iml" afterPath="$PROJECT_DIR$/.idea/reduce.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/loseweights_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/loseweights_controller.rb" />
     </list>
     <ignored path="reduce.iws" />
@@ -49,7 +46,7 @@
       <file leaf-file-name="loseweights_controller.rb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/loseweights_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="36" column="7" selection-start="880" selection-end="880" vertical-scroll-proportion="0.6460296">
+            <state line="31" column="36" selection-start="742" selection-end="742" vertical-scroll-proportion="0.54508746">
               <folding />
             </state>
           </provider>
@@ -568,7 +565,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/loseweights_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="36" column="7" selection-start="880" selection-end="880" vertical-scroll-proportion="0.6460296">
+        <state line="31" column="36" selection-start="742" selection-end="742" vertical-scroll-proportion="0.54508746">
           <folding />
         </state>
       </provider>
