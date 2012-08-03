@@ -1,4 +1,9 @@
-
+<div class="page-header">
+  <h1>体重历史图表</h1>
+  <div >
+    <img src='<%=@img_url%>'/>
+  </div>
+</div>
 <table class="table table-bordered">
 	<thead>
   <tr>
@@ -7,10 +12,10 @@
     <th>大腿围</th>
     <th>日期</th>
 	<th>填写时间</th>
-	<th>
+	<th width="25%">
 		备注
 	</th>
-    <th></th>
+    <th width="20%"></th>
   </tr>
 </thead>
 <tbody>
@@ -31,11 +36,8 @@
 <% end %>
 </tbody>
 </table>
-
+<p><%=will_paginate @loseweights%></p>
 <br />
 
 <%= link_to '填写日志', new_loseweight_path,:class=>"btn dropdown-toggle" %>
 
-<div >
-	<img src='<%=@img_url%>'/>
-</div>
