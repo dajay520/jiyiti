@@ -37,7 +37,7 @@ class LoseweightsController < ApplicationController
       end
     end
     #data=[1,2,3,4]
-    @img_url = Gchart.line(:data => data, :size => '400x300', :line_colors => '0077CC',:axis_with_labels => ['y'])
+    @img_url = Gchart.line(:data => data, :size => '400x300', :line_colors => '0077CC')
     #@img_url = Gchart.line(:data => [0, 40, 10, 70, 20],:axis_with_labels => ['y'])
     respond_to do |format|
       format.html # index.html.erb
