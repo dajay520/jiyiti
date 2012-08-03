@@ -29,7 +29,7 @@ class LoseweightsController < ApplicationController
   # GET /loseweights.json
   def index
     #@loseweights = Loseweight.find(:all,order=>'created_at')
-    @loseweights = Loseweight.order('created_at')
+    @loseweights = Loseweight.order('update_date')
     data = []
     @loseweights.each do |l|
       #if l.weight.to_f.to_s==l.weight
