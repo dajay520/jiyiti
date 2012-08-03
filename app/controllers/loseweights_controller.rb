@@ -28,7 +28,7 @@ class LoseweightsController < ApplicationController
   # GET /loseweights
   # GET /loseweights.json
   def index
-    @loseweights = Loseweight.all
+    @loseweights = Loseweight.find(:all,order=>'created_at')
     
     data = []
     @loseweights.each do |l|
