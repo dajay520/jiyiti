@@ -32,7 +32,9 @@ class LoseweightsController < ApplicationController
     
     data = []
     @loseweights.each do |l|
-      data<<Integer(l.weight)
+      if l.weight.to_i.to_s==l.weight 
+      	data<<Integer(l.weight)
+      end
     end
     #data=[1,2,3,4]
     @img_url = Gchart.line(:data => data, :size => '400x300', :line_colors => '0077CC',:axis_with_labels => ['y'])
