@@ -28,13 +28,13 @@ class LoseweightsController < ApplicationController
   # GET /loseweights
   # GET /loseweights.json
   def index
-    @loseweights = Loseweight.find(:all,order=>'created_at')
-    
+    #@loseweights = Loseweight.find(:all,order=>'created_at')
+    @loseweights = Loseweight.order(:order=>'created_at')
     data = []
     @loseweights.each do |l|
-      if l.weight.to_f.to_s==l.weight 
+      #if l.weight.to_f.to_s==l.weight
       	data<<l.weight.to_f
-      end
+      #end
     end
     #data=[1,2,3,4]
     @img_url = Gchart.sparkline(:data => data, :size => '400x300', :line_colors => '0077CC',:axis_with_labels => 'y', :max_value=>51,:min_value=>46)
