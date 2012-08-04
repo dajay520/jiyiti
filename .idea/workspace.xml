@@ -3,13 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="5c24ea4b-08c4-4f06-9985-418b3855d4d6" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/reduce.iml" afterPath="$PROJECT_DIR$/.idea/reduce.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile" afterPath="$PROJECT_DIR$/Gemfile" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/loseweights_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/loseweights_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/application.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/loseweights/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/loseweights/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/loseweights/index.html.erb" afterPath="$PROJECT_DIR$/app/views/loseweights/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/assets/stylesheets/styles.css" afterPath="$PROJECT_DIR$/vendor/assets/stylesheets/styles.css" />
     </list>
     <ignored path="reduce.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,16 +29,16 @@
       <file leaf-file-name="index.html.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/loseweights/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="50" column="12" selection-start="1236" selection-end="1236" vertical-scroll-proportion="-24.541666">
+            <state line="24" column="10" selection-start="513" selection-end="513" vertical-scroll-proportion="-8.291667">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="styles.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="styles.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/vendor/assets/stylesheets/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4024" column="17" selection-start="74622" selection-end="74622" vertical-scroll-proportion="0.51690143">
+            <state line="4024" column="17" selection-start="74622" selection-end="74622" vertical-scroll-proportion="-6.672727">
               <folding />
             </state>
           </provider>
@@ -86,16 +81,16 @@
       <file leaf-file-name="loseweights_controller.rb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/loseweights_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="36" selection-start="735" selection-end="735" vertical-scroll-proportion="0.0">
+            <state line="32" column="90" selection-start="816" selection-end="816" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_form.html.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="_form.html.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/loseweights/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="38" selection-start="38" selection-end="38" vertical-scroll-proportion="-0.0">
+            <state line="30" column="9" selection-start="732" selection-end="732" vertical-scroll-proportion="0.59681696">
               <folding />
             </state>
           </provider>
@@ -137,12 +132,12 @@
         <option value="$USER_HOME$/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.2.0/lib/action_view/helpers/form_helper.rb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/loseweights/show.html.erb" />
-        <option value="$PROJECT_DIR$/app/controllers/loseweights_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/loseweights/login.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/application.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/loseweights/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/loseweights/index.html.erb" />
         <option value="$PROJECT_DIR$/vendor/assets/stylesheets/styles.css" />
+        <option value="$PROJECT_DIR$/app/controllers/loseweights_controller.rb" />
+        <option value="$PROJECT_DIR$/app/views/loseweights/_form.html.erb" />
       </list>
     </option>
   </component>
@@ -717,13 +712,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/loseweights_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="36" selection-start="735" selection-end="735" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.2-p290/gems/actionpack-3.2.0/lib/action_view/helpers/url_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="230" column="10" selection-start="10850" selection-end="10850" vertical-scroll-proportion="0.0">
@@ -755,13 +743,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/loseweights/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="38" selection-start="38" selection-end="38" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.rvm/gems/ruby-1.9.2-p290/gems/will_paginate-3.0.3/lib/will_paginate/view_helpers/action_view.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="25" column="8" selection-start="873" selection-end="873" vertical-scroll-proportion="0.49603173">
@@ -776,16 +757,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/loseweights/index.html.erb">
+    <entry file="file://$PROJECT_DIR$/vendor/assets/stylesheets/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="50" column="12" selection-start="1236" selection-end="1236" vertical-scroll-proportion="-24.541666">
+        <state line="4024" column="17" selection-start="74622" selection-end="74622" vertical-scroll-proportion="-6.672727">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/assets/stylesheets/styles.css">
+    <entry file="file://$PROJECT_DIR$/app/controllers/loseweights_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4024" column="17" selection-start="74622" selection-end="74622" vertical-scroll-proportion="0.51690143">
+        <state line="32" column="90" selection-start="816" selection-end="816" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/loseweights/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="24" column="10" selection-start="513" selection-end="513" vertical-scroll-proportion="-8.291667">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/loseweights/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="9" selection-start="732" selection-end="732" vertical-scroll-proportion="0.59681696">
           <folding />
         </state>
       </provider>
