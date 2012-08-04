@@ -29,7 +29,7 @@ class LoseweightsController < ApplicationController
   # GET /loseweights.json
   def index
     @all_loseweights = Loseweight.order('update_date')
-    @loseweights = Loseweight.paginate(:order=>'update_date desc',:page=>params[:page],:per_page => 15)
+    @loseweights = Loseweight.paginate(:order=>'update_date desc',:page=>params[:page],:per_page => 5)
     data = []
     @all_loseweights.each do |l|
       #if l.weight.to_f.to_s==l.weight

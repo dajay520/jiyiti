@@ -1,10 +1,19 @@
 <div class="page-header">
-  <h1>体重历史图表</h1>
-  <div >
-    <img src='<%=@img_url%>'/>
+  <div class="row">
+    <div class="span12"><h1>体重历史图表</h1>
+      &nbsp;<i class="icon-comment"></i></div>
+  </div>
+
+  <div class="row">
+    <div class="span10"><img src='<%=@img_url%>'/></div>
+
   </div>
 </div>
-<table class="table table-bordered">
+<div class="row">
+  <div class="span12"><%= link_to '填写日志', new_loseweight_path,:class=>"btn btn-danger" %></div>
+
+</div>
+<table class="table table-striped">
 	<thead>
   <tr>
     <th>重量</th>
@@ -29,9 +38,12 @@
 		loseweight.gmt_create.strftime('%Y-%m-%d %H:%M:%S') 
 		end %></td>
 	<td><%= loseweight.remark %></td>
-    <td><%= link_to '显示', loseweight,:class=>"btn dropdown-toggle"  %>
-    <%= link_to '编辑', edit_loseweight_path(loseweight),:class=>"btn dropdown-toggle"  %>
-    <%= link_to '删除', loseweight, confirm: '确定要删除此项吗?', method: :delete,:class=>"btn dropdown-toggle"  %></td>
+    <td><%= link_to loseweight,:class=>"btn btn-small btn-info" do %>
+          <i class="icon-info-sign icon-white"></i> 显示
+          <% end %>
+    <%= link_to edit_loseweight_path(loseweight),:class=>"btn " do %>
+          <i class="icon-refresh"></i> 编辑
+    <% end %>
   </tr>
 <% end %>
 </tbody>
@@ -39,5 +51,5 @@
 <p><%=will_paginate @loseweights%></p>
 <br />
 
-<%= link_to '填写日志', new_loseweight_path,:class=>"btn dropdown-toggle" %>
+<%= link_to '填写日志', new_loseweight_path,:class=>"btn btn-danger" %>
 

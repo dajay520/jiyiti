@@ -1,4 +1,4 @@
-<%= form_for(@loseweight) do |f| %>
+<%= form_for(@loseweight,:class=>'well') do |f| %>
   <% if @loseweight.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@loseweight.errors.count, "error") %> prohibited this loseweight from being saved:</h2>
