@@ -31,7 +31,6 @@ class LoseweightsController < ApplicationController
     @all_loseweights = Loseweight.order('update_date')
     @loseweights = Loseweight.paginate(:order=>'update_date desc',:page=>params[:page],:per_page => 15)
     data = []
-    SendMail.confirm.deliver
     @all_loseweights.each do |l|
       #if l.weight.to_f.to_s==l.weight
       	data<<l.weight.to_f
