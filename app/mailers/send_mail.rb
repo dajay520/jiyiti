@@ -8,10 +8,8 @@ class SendMail < ActionMailer::Base
   #   en.send_mail.confirm.subject
   #
   def confirm
-    if Loseweight.where(:update_date => '2012-08-04').size < 1
-      mail to: ["dajay520@qq.com","dajay520@gmail.com"],:subject => "日报延迟通知"
-    else
-      mail to: ["dajay520@qq.com","dajay520@gmail.com"],:subject => "日报没有延迟通知"
+    if Loseweight.where(:update_date => (Time.now + 8.hour).strftime("%y-%m-%d")).size < 1
+      mail to: ["dajay520@qq.com","dajay520@gmail.com","261657372@qq.com"],:subject => "日报延迟未发通知"
     end
   end
 end
