@@ -3,6 +3,8 @@ Reduce::Application.routes.draw do
     collection do
       post :login
       get :login
+      get :qqlogin
+      get :loginout
     end
   end
 

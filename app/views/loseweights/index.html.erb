@@ -38,10 +38,10 @@
 		loseweight.gmt_create.strftime('%Y-%m-%d %H:%M:%S') 
 		end %></td>
 	<td><%= loseweight.remark %></td>
-    <td><%= link_to loseweight,:class=>"btn btn-small btn-info" do %>
+    <td><%= link_to loseweight,:class=>"btn btn-mini btn-info" do %>
           <i class="icon-info-sign icon-white"></i> 显示
           <% end %>
-    <%= link_to edit_loseweight_path(loseweight),:class=>"btn " do %>
+    <%= link_to edit_loseweight_path(loseweight),:class=>"btn btn-mini" do %>
           <i class="icon-refresh"></i> 编辑
     <% end %>
   </tr>

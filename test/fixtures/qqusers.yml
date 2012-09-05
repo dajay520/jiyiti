@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  open_id: MyString
+  name: MyString
+  token: MyString
+  gmt_created: 2012-08-16
+  gmt_modified: 2012-08-16
+
+two:
+  open_id: MyString
+  name: MyString
+  token: MyString
+  gmt_created: 2012-08-16
+  gmt_modified: 2012-08-16
