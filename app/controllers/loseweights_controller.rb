@@ -66,12 +66,16 @@ class LoseweightsController < ApplicationController
     @loseweights = Loseweight.where(:user_id=>session[:user].id).paginate(:order=>'update_date desc',:page=>params[:page],:per_page => 15)
     data = []
     @all_loseweights.each do |l|
-      #if l.weight.to_f.to_s==l.weight
+      if l.weight.to_f!=0
       	data<<l.weight.to_f
-      #end
+      end
     end
     #data=[1,2,3,4]
-    @img_url = Gchart.sparkline(:data => data, :size => '400x300', :line_colors => '0077CC',:axis_with_labels => 'y', :max_value=>51,:min_value=>46)
+    if data.size>0
+      @img_url = Gchart.sparkline(:data => data, :size => '400x300', :line_colors => '0077CC',:axis_with_labels => 'y',
+      :chg=>'0,20', :max_value=>data.max+1,:min_value=>data.min-1)+'&chg=0,15&chls=3'
+    end
+    
     #@img_url = Gchart.line(:data => [0, 40, 10, 70, 20],:axis_with_labels => ['y'])
     respond_to do |format|
       format.html # index.html.erb

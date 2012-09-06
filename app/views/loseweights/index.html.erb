@@ -1,6 +1,6 @@
-<div class="page-header">
+<div >
   <div class="row">
-    <div class="span12"><h1>体重历史图表</h1>
+    <div class="span12">
       &nbsp;<i class="icon-comment"></i></div>
   </div>
 
@@ -44,12 +44,14 @@
     <%= link_to edit_loseweight_path(loseweight),:class=>"btn btn-mini" do %>
           <i class="icon-refresh"></i> 编辑
     <% end %>
+	<%= link_to  loseweight, confirm: '你确定要删除吗?', method: :delete ,:class=>"btn btn-mini" do%>
+		 <i class="icon-delete"></i> 删除
+	<% end %>
+	</td>
   </tr>
 <% end %>
 </tbody>
 </table>
 <p><%=will_paginate @loseweights%></p>
 <br />
-
-<%= link_to '填写日志', new_loseweight_path,:class=>"btn btn-danger" %>
 
