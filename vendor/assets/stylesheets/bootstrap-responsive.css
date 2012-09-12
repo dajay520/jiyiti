@@ -6,15 +6,22 @@
  * http://www.apache.org/licenses/LICENSE-2.0
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
+.net-area {
+background:#94F7BC url(bg.png) no-repeat center bottom;
+
+}
  */
 body {
   position: relative;
   padding-top: 90px;
-  background-color: #fff;
-  background-image: url(../img/grid-18px-masked.png);
+  background-color: rgba(69, 174, 234, 0.46);
+  background-image: url(../img/bg.png);
   background-repeat: repeat-x;
-  background-position: 0 40px;
+  background-attachment:fixed;
+  background-position: bottom;
 }
+
+
 
 .clearfix {
   *zoom: 1;

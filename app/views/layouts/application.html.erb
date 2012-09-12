@@ -3,7 +3,7 @@
 <head>
   <title>减肥日志</title>
   <meta name="description"
-      content="ruby rails 蠢耸 减肥日志 肥耸 &hellip;">
+      content="ruby rails 体重 记录 身体属性记录 曲线 图表 &hellip;">
   
   <%= stylesheet_link_tag    "styles", :media => "all" %>
   <%= stylesheet_link_tag    "bootstrap-responsive", :media => "all" %>
@@ -12,7 +12,7 @@
   <%= csrf_meta_tags %>
 <meta property="qc:admins" content="1041374311106375" >
 </head>
-<body data-spy="scroll" data-target=".subnav" data-offset="50">
+<body data-spy="scroll" data-target=".subnav" data-offset="50" class="net-area">
   <!-- Navbar
     ================================================== -->
     <div class="navbar navbar-fixed-top">
@@ -26,9 +26,15 @@
           <a class="brand" href="#">
           	记忆体
           </a>
-          <div class="btn-group pull-right">
+          <div class="nav-collapse pull-right">
             <% if session[:userInfo]%>
-			<img src="<%=session[:userInfo]['figureurl']%>"/><%=session[:userInfo]['nickname']%><a href='/loseweights/loginout'>退出</a>
+			
+			<ul class="nav">
+				<li><img src="<%=session[:userInfo]['figureurl']%>" style="height:45px;width:45px"><%=session[:userInfo]['nickname']%></img></li>
+			<li>
+			<a href='/loseweights/loginout'>退出</a>
+			</li>
+			</ul>
 			<% end %>
           </div>
           <div class="nav-collapse">

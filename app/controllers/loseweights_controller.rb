@@ -62,18 +62,35 @@ class LoseweightsController < ApplicationController
   def index
     puts 'session_user:'
     puts session[:user]
-    @all_loseweights = Loseweight.where(:user_id=>session[:user].id).order('update_date')
-    @loseweights = Loseweight.where(:user_id=>session[:user].id).paginate(:order=>'update_date desc',:page=>params[:page],:per_page => 15)
+    @all_loseweights = Loseweight.where(:user_id=>session[:user].id).order('update_date,created_at')
+    @loseweights = Loseweight.where(:user_id=>session[:user].id).order('update_date desc').order('created_at desc').paginate(:page=>params[:page],:per_page => 7)
     data = []
+    time = []
+    step = (@all_loseweights.size-1)/5+1
+    count = 1
     @all_loseweights.each do |l|
       if l.weight.to_f!=0
       	data<<l.weight.to_f
+      	if(count%step==0)
+      	  time << l.update_date.strftime('%m月%d日')
+    	  end
+      	count+=1
       end
+    end
+    timestr=''
+    time.each do |s|
+      timestr+=s+'|'
+    end
+    if timestr.size>0
+      timestr=timestr[0,timestr.size-1]
     end
     #data=[1,2,3,4]
     if data.size>0
-      @img_url = Gchart.sparkline(:data => data, :size => '400x300', :line_colors => '0077CC',:axis_with_labels => 'y',
-      :chg=>'0,20', :max_value=>data.max+1,:min_value=>data.min-1)+'&chg=0,15&chls=3'
+      @img_url = Gchart.sparkline(:data => data, :size => '400x300', :line_colors => '0077CC',:axis_with_labels => 'y,x',
+      :max_value=>data.max+1,:min_value=>data.min-1)+'&chg=0,15&chls=3&chxl=1:|'+timestr + '&chf=bg,s,b2d9f3'
+      if data.size==3
+        @img_url=fix_bug(@img_url)
+      end
     end
     
     #@img_url = Gchart.line(:data => [0, 40, 10, 70, 20],:axis_with_labels => ['y'])
@@ -81,6 +98,17 @@ class LoseweightsController < ApplicationController
       format.html # index.html.erb
       format.json { render json: @loseweights }
     end
+  end
+  
+  def fix_bug(str)
+    if str.index 'chxr='
+      s1=str[str.index('chxr='),str.size]
+      s2=s1[0,s1.index('&')]
+      s3=s2[0,s2.size-5]
+      puts 's3=' +s3
+      return  str[0,str.index('chxr=')] + s3 + s1[s1.index('&'),s1.size]
+    end
+    str
   end
 
   # GET /loseweights/1

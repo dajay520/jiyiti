@@ -10,15 +10,15 @@
   </div>
 </div>
 <div class="row">
-  <div class="span12"><%= link_to '填写日志', new_loseweight_path,:class=>"btn btn-danger" %></div>
+  <div class="span12"><%= link_to '填写', new_loseweight_path,:class=>"btn btn-info" %></div>
 
 </div>
-<table class="table table-striped">
+<div class="">
+	
+<table class="table ">
 	<thead>
   <tr>
     <th>重量</th>
-    <th>臀围</th>
-    <th>大腿围</th>
     <th>日期</th>
 	<th>填写时间</th>
 	<th width="25%">
@@ -31,8 +31,6 @@
 <% @loseweights.each do |loseweight| %>
   <tr>
     <td><%= loseweight.weight %></td>
-    <td><%= loseweight.hipline %></td>
-    <td><%= loseweight.legline %></td>
     <td><%= loseweight.update_date %></td>
 	<td><%= if(loseweight.gmt_create)
 		loseweight.gmt_create.strftime('%Y-%m-%d %H:%M:%S') 
@@ -54,4 +52,5 @@
 </table>
 <p><%=will_paginate @loseweights%></p>
 <br />
+</div>
 
