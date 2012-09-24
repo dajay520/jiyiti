@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120829145855) do
+ActiveRecord::Schema.define(:version => 20120923153851) do
 
   create_table "loseweights", :force => true do |t|
     t.string   "weight"
@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(:version => 20120829145855) do
     t.date     "update_date"
     t.datetime "created_at",   :null => false
     t.datetime "updated_at",   :null => false
-    t.string   "remark"
+    t.text     "remark"
     t.datetime "gmt_create"
     t.datetime "gmt_modified"
     t.integer  "user_id"

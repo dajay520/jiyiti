@@ -72,7 +72,7 @@ class LoseweightsController < ApplicationController
       if l.weight.to_f!=0
       	data<<l.weight.to_f
       	if(count%step==0)
-      	  time << l.update_date.strftime('%m月%d日')
+      	  time << l.update_date.strftime('%m/%d')
     	  end
       	count+=1
       end
@@ -146,7 +146,7 @@ class LoseweightsController < ApplicationController
     @loseweight.user_id=session[:user].id
     respond_to do |format|
       if @loseweight.save
-        format.html { redirect_to @loseweight, notice: '新建日志成功。蠢耸。' }
+        format.html { redirect_to "/loseweights" }
         format.json { render json: @loseweight, status: :created, location: @loseweight }
       else
         format.html { render action: "new" }
