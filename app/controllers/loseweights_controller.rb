@@ -31,8 +31,10 @@ class LoseweightsController < ApplicationController
   
   def qqlogin
     puts "qqlogin:params," + request.fullpath
+    puts "http_state:"+request.env['HTTP_CONNECTION']
     qq = Qq.new
     token=qq.get_token(params[:code],request.env['HTTP_CONNECTION'])
+    puts "token:" + token
     quser = Qquser.where(:open_id=>qq.openid)
     if quser.size == 0
       puts 'no user.create it'

@@ -8,6 +8,7 @@ ADDSHAREURL='https://graph.qq.com/share/add_share'
 CHECKPAGEFANSURL='https://graph.qq.com/user/check_page_fans?'
 ADDTURL='https://graph.qq.com/t/add_t'
 ADDPICTURL='https://graph.qq.com/t/add_pic_t'
+ADDPICURL='https://open.t.qq.com/api/t/add_pic_url'
 DELTURL='https://graph.qq.com/t/del_t'
 GETREPOSTLISTURL='https://graph.qq.com/t/get_repost_list?'
 GETINFOURL='https://graph.qq.com/user/get_info?'
@@ -16,7 +17,7 @@ GETFANSLISTURL='https://graph.qq.com/relation/get_fanslist?'
 GETIDOLLISTURL='https://graph.qq.com/relation/get_idollist?'
 ADDIDOLURL='https://graph.qq.com/relation/add_idol'
 DELIDOLURL='https://graph.qq.com/relation/del_idol'
-APPID='100295213'
+APPID= '100295213'#'100295213'
 REDURL='&redirect_uri=http://xiyix.com/loseweights/qqlogin'
 APPKEY='3cfeb3faf4aa0b1e86fd1f9246f7074a'
 
@@ -36,6 +37,20 @@ class Qq
 	
 	#获取令牌:认证码code=params[:code],httpstat=request.env['HTTP_CONNECTION']
 	def get_token(code,httpstat)
+	  puts 'get_token....'
+	  #ts = open(TOKENURL + 'grant_type=authorization_code&client_id=' + APPID + '&client_secret=' + APPKEY + '&code=' + code + REDURL).read
+	  #puts "ts:" + ts
+		#获取令牌
+		@token=open(TOKENURL + 'grant_type=authorization_code&client_id=' + APPID + '&client_secret=' + APPKEY + '&code=' + code + REDURL).read[/(?<=access_token=)\w{32}/]
+		puts @token
+		#获取Openid
+		@openid=open(OPENIDURL + @token).read[/\w{32}/]		
+		#获取通用验证参数
+		@auth='access_token=' + @token + '&oauth_consumer_key=' + APPID + '&openid=' + @openid
+	end
+	
+	#获取令牌:认证码code=params[:code],httpstat=request.env['HTTP_CONNECTION']
+	def get_token_openqq(code,httpstat)
 	  puts 'get_token....'
 		#获取令牌
 		@token=open(TOKENURL + 'grant_type=authorization_code&client_id=' + APPID + '&client_secret=' + APPKEY + '&code=' + code + '&state='+ httpstat + REDURL).read[/(?<=access_token=)\w{32}/]
@@ -93,7 +108,19 @@ class Qq
 	def add_t(auth,clientip,jing,wei,syncflag,content)
 		MultiJson.decode(post_comm(ADDTURL,URI.escape(auth + '&clientip=' + clientip + '&jing=' + jing + '&wei=' + wei + '&syncflag=' + syncflag + '&content=' + content)))
 	end
-
+  def test_add_pic
+    MultiJson.decode(RestClient.post(ADDPICURL,
+													:access_token=>"afba8e37b6ef7672b8cc9014eb6a1874",
+													:oauth_consumer_key=>"801058005",
+													:openid=>"674C462EC9D1015F3A7FA56478CFA0AD",
+													:clientip=>"122.194.1.31",
+													:syncflag=>"0",
+													:content=>"test",
+													:pic_url=>"http://t2.qpic.cn/mblogpic/9c7e34358608bb61a696/2000",
+													:format=>"json",
+													:oauth_version=>"2.a",
+													:scope=>"all"	))
+  end
 	#上传图片并发表消息到腾讯微博
 	def add_pic_t(token,openid,clientip,jing,wei,syncflag,content,pic)
 		MultiJson.decode(RestClient.post(ADDPICTURL,
@@ -106,6 +133,20 @@ class Qq
 													:syncflag=>syncflag,
 													:content=>content,
 													:pic=>pic))
+	end
+	
+	def add_pic_url(token,openid,clientip,jing,wei,syncflag,content,pic_url)
+		MultiJson.decode(RestClient.post(ADDPICURL,
+													:access_token=>"afba8e37b6ef7672b8cc9014eb6a1874",
+													:oauth_consumer_key=>"801058005",
+													:openid=>"674C462EC9D1015F3A7FA56478CFA0AD",
+													:clientip=>clientip,
+													:syncflag=>syncflag,
+													:content=>content,
+													:pic_url=>pic_url,
+													:format=>"json",
+													:oauth_version=>"2.a",
+													:scope=>"all"))
 	end
 	
 	#删除一条微博

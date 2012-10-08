@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>减肥日志</title>
+  <title>
+  	记忆体beta1.0
+  </title>
   <meta name="description"
       content="ruby rails 体重 记录 身体属性记录 曲线 图表 &hellip;">
   
@@ -10,6 +12,8 @@
 
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+<script src="http://mat1.gtimg.com/app/openjs/openjs.js#autoboot=no&debug=no"></script>
 <meta property="qc:admins" content="1041374311106375" >
 </head>
 <body data-spy="scroll" data-target=".subnav" data-offset="50" class="net-area">
@@ -27,15 +31,20 @@
           <a class="brand" href="#" >
           	记忆体
           </a>
+			
           <div class="nav-collapse pull-right">
             <% if session[:userInfo]%>
-			
+						<a class="brand" style="padding-bottom:0px"><img src="<%=session[:userInfo]['figureurl']%>" ><%=session[:userInfo]['nickname']%></img></a>		
 			<ul class="nav">
-				<li><img src="<%=session[:userInfo]['figureurl']%>" style="height:45px;width:45px"><%=session[:userInfo]['nickname']%></img></li>
 			<li>
 			<a href='/loseweights/loginout'>退出</a>
 			</li>
 			</ul>
+			<% else %>
+					
+			<a  class="brand" style="padding-bottom:0px" href="https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=100295213&redirect_uri=http://xiyix.com/loseweights/qqlogin">
+				<img src='/img/qq_logo_3.png'>
+			</a>
 			<% end %>
           </div>
           <div class="nav-collapse">
