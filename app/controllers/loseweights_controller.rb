@@ -66,13 +66,17 @@ class LoseweightsController < ApplicationController
     puts session[:user]
     @all_loseweights = Loseweight.where(:user_id=>session[:user].id).order('update_date,created_at')
     @loseweights = Loseweight.where(:user_id=>session[:user].id).order('update_date desc').order('created_at desc').paginate(:page=>params[:page],:per_page => 7)
-    data = []
+    @data = []
     time = []
-    step = (@all_loseweights.size-1)/5+1
+    @time=[] #新报表记录x轴属性
+    allsize=@all_loseweights.size
+    step = (allsize-1)/6+1
+    @step = (allsize-1)/10+1 #新报表x轴显示步长
     count = 1
     @all_loseweights.each do |l|
       if l.weight.to_f!=0
-      	data<<l.weight.to_f
+      	@data<<l.weight.to_f
+        @time<< l.update_date.strftime('%m/%d')
       	if(count%step==0)
       	  time << l.update_date.strftime('%m/%d')
     	  end
@@ -87,10 +91,10 @@ class LoseweightsController < ApplicationController
       timestr=timestr[0,timestr.size-1]
     end
     #data=[1,2,3,4]
-    if data.size>0
-      @img_url = Gchart.sparkline(:data => data, :size => '400x300', :line_colors => '0077CC',:axis_with_labels => 'y,x',
-      :max_value=>data.max+1,:min_value=>data.min-1)+'&chg=0,15&chls=3&chxl=1:|'+timestr + '&chf=bg,s,b2d9f3'
-      if data.size==3
+    if @data.size>0
+      @img_url = Gchart.sparkline(:data => @data, :size => '400x300', :line_colors => '0077CC',:axis_with_labels => 'y,x',
+      :max_value=>@data.max+1,:min_value=>@data.min-1)+'&chg=0,15&chls=3&chxl=1:|'+timestr + '&chf=bg,s,b2d9f3'
+      if @data.size==3
         @img_url=fix_bug(@img_url)
       end
     end

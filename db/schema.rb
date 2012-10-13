@@ -18,9 +18,9 @@ ActiveRecord::Schema.define(:version => 20120923153851) do
     t.string   "hipline"
     t.string   "legline"
     t.date     "update_date"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
-    t.text     "remark"
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
+    t.text     "remark",       :limit => 255
     t.datetime "gmt_create"
     t.datetime "gmt_modified"
     t.integer  "user_id"

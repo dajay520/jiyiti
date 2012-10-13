@@ -14,11 +14,11 @@ background:#94F7BC url(bg.png) no-repeat center bottom;
 body {
   position: relative;
   padding-top: 90px;
-  background-color: rgba(69, 174, 234, 0.46);
+  background-color: #b2d9f3;
   background-image: url(../img/bg.png);
   background-repeat: repeat-x;
   background-attachment:fixed;
-  background-position: bottom;
+  background-position: 0px 500px;
 }
 
 
