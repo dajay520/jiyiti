@@ -21,10 +21,10 @@ test:
   timeout: 5000
 
 production:
-  adapter: mysql 
+  adapter: mysql2 
   encoding: utf8
   host: 127.0.0.1
   database: jiyiti
   pool: 5
   username: jiyiti
-  password: 7877435
+  password: "7877435"
