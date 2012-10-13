@@ -6,8 +6,8 @@ gem 'rails', '3.2.8'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-#gem 'sqlite3'
-gem 'pg'
+gem 'sqlite3'
+gem 'mysql'
 gem 'googlecharts'
 gem 'will_paginate'
 gem 'rest-client'
