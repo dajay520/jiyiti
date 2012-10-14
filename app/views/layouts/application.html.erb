@@ -12,6 +12,9 @@
 
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "highcharts" %>
+  <%= javascript_include_tag "bootstrap-modal" %>
+  <%= javascript_include_tag "bootstrap-tooltip" %>
+  <%= javascript_include_tag "bootstrap-transition" %>
   <%= csrf_meta_tags %>
 
 <script src="http://mat1.gtimg.com/app/openjs/openjs.js#autoboot=no&debug=no"></script>
@@ -53,7 +56,6 @@
               <li class="active"><a href="#">
               	主页
               </a></li>
-              <li><a href="#about">设置</a></li>
               <li><a href="#contact">留言与建议</a></li>
             </ul>
           </div><!--/.nav-collapse -->
@@ -63,6 +65,8 @@
     <div class="container">
 		<%= yield %>
 	</div>
-
+    <footer>
+      <p>&copy; 记忆体 2012  dajay520@gmail.com</p>
+    </footer>
 </body>
 </html>

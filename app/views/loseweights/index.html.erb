@@ -10,17 +10,108 @@
 <div class="span1" id="qqwb_share__" data-appkey="801249859" data-icon="0" data-counter="0" data-content="我最近的体重曲线" data-richcontent=".." data-pic="<%=@img_url%>"></div>
   </div>
 <div class="row">
-  <div class="span12"><%= link_to '填写', new_loseweight_path,:class=>"btn btn-info" %></div>
+  <div class="span12">
+
+	  <div id="myModal" class="modal hide fade">
+	              <div class="modal-header">
+	                <button type="button" class="close" data-dismiss="modal">&times;</button>
+	                <h3>记录体重</h3>
+	              </div>
+	              <div class="modal-body">
+	                <form accept-charset="UTF-8" action="/loseweights" class="new_loseweight" id="new_loseweight" method="post">
+					<input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>" />	
+					<h4>体重:</h4>
+	                <input id="loseweight_weight" name="loseweight[weight]" maxlength="6"  onkeypress="return event.keyCode>=48&&event.keyCode<=57||event.keyCode==46"
+onpaste="return !clipboardData.getData('text').match(/\D/)"
+ondragenter="return false"  style="width:110px;height:30px;font-size:30px;ime-mode:Disabled" type="text" />
+
+	                <h4>日期:</h4>
+				<select id="loseweight_update_date_1i" name="loseweight[update_date(1i)]" style="width:80px">
+					<option value="2007">2007年</option>
+					<option value="2008">2008年</option>
+					<option value="2009">2009年</option>
+					<option value="2010">2010年</option>
+					<option value="2011">2011年</option>
+					<option value="2012">2012年</option>
+					<option value="2013">2013年</option>
+					<option value="2014">2014年</option>
+					<option value="2015">2015年</option>
+					<option value="2016">2016年</option>
+					<option value="2017">2017年</option>
+				</select>
+				<select id="loseweight_update_date_2i" name="loseweight[update_date(2i)]" style="width:80px">
+				<option value="1">一月</option>
+				<option value="2">二月</option>
+				<option value="3">三月</option>
+				<option value="4">四月</option>
+				<option value="5">五月</option>
+				<option value="6">六月</option>
+				<option value="7">七月</option>
+				<option value="8">八月</option>
+				<option value="9">九月</option>
+				<option value="10">十月</option>
+				<option value="11">十一月</option>
+				<option value="12">十二月</option>
+				</select>
+				<select id="loseweight_update_date_3i" name="loseweight[update_date(3i)]" style="width:60px">
+				<option value="1">1日</option>
+				<option value="2">2日</option>
+				<option value="3">3日</option>
+				<option value="4">4日</option>
+				<option value="5">5日</option>
+				<option value="6">6日</option>
+				<option value="7">7日</option>
+				<option value="8">8日</option>
+				<option value="9">9日</option>
+				<option value="10">10日</option>
+				<option value="11">11日</option>
+				<option value="12">12日</option>
+				<option value="13">13日</option>
+				<option value="14">14日</option>
+				<option value="15">15日</option>
+				<option value="16">16日</option>
+				<option value="17">17日</option>
+				<option value="18">18日</option>
+				<option value="19">19日</option>
+				<option value="20">20日</option>
+				<option value="21">21日</option>
+				<option value="22">22日</option>
+				<option value="23">23日</option>
+				<option value="24">24日</option>
+				<option value="25">25日</option>
+				<option value="26">26日</option>
+				<option value="27">27日</option>
+				<option value="28">28日</option>
+				<option value="29">29日</option>
+				<option value="30">30日</option>
+				<option value="31">31日</option>
+				</select>
+
+	                <h4>记录点什么:</h4>
+	                <textarea id="loseweight_remark" name="loseweight[remark]" class="input-xlarge" id="textarea" rows="3" style="width:400px;"></textarea>
+				
+				    <hr>
+
+	               
+	              </div>
+	              <div class="modal-footer">
+	                <a href="#" class="btn" data-dismiss="modal" >关闭</a>  
+					<input name="commit" type="submit" class="btn btn-primary" value="提交" />
+	              </div>
+				  </form>
+	            </div>
+   <a data-toggle="modal" href="#myModal" class="btn btn-primary btn-large">记录体重</a>
+  </div>
 
 </div>	
 <table class="table ">
 	<thead>
   <tr>
-    <th>重量</th>
+    <th>体重</th>
     <th>日期</th>
 	<th>填写时间</th>
 	<th width="25%">
-		备注
+		记录了一些
 	</th>
     <th width="20%"></th>
   </tr>
@@ -34,10 +125,8 @@
 		loseweight.gmt_create.strftime('%Y-%m-%d %H:%M:%S') 
 		end %></td>
 	<td><%= loseweight.remark %></td>
-    <td><%= link_to loseweight,:class=>"btn btn-mini btn-info" do %>
-          <i class="icon-info-sign icon-white"></i> 显示
-          <% end %>
-    <%= link_to edit_loseweight_path(loseweight),:class=>"btn btn-mini" do %>
+    <td>
+		<%= link_to edit_loseweight_path(loseweight),:class=>"btn btn-mini btn-info" do %>
           <i class="icon-refresh"></i> 编辑
     <% end %>
 	<%= link_to  loseweight, confirm: '你确定要删除吗?', method: :delete ,:class=>"btn btn-mini" do%>
@@ -77,8 +166,8 @@ $(function () {
                    title: {
                        text: '体重 (kg)'
                    },
-				   max: <%=@data.max+1%>,
-                   min: <%=@data.min-1%>,
+				   max: <%=@data.max%>,
+                   min: <%=@data.min%>,
                    minorGridLineWidth: 0,
                    gridLineWidth: 1,
                    alternateGridColor: null
@@ -126,4 +215,9 @@ $(function () {
        });
     
    });
+   var date = new Date();
+  // alert(date.getMonth());
+   $("#loseweight_update_date_1i").val(date.getFullYear()).attr("selected",true);
+   $("#loseweight_update_date_2i").val(date.getMonth()+1).attr("selected",true);
+   $("#loseweight_update_date_3i").val(date.getDate()).attr("selected",true);
 		</script>
