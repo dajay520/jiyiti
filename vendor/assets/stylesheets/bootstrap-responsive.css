@@ -17,11 +17,21 @@ body {
   background-color: #b2d9f3;
   background-image: url(../img/bg.png);
   background-repeat: repeat-x;
-  background-attachment:fixed;
+  background-attachment:relative;
   background-position: bottom;
+  min-height:750px;
 }
 
+.footer{
+    position:absolute;
+    bottom:0;
+    left:50%;
+    margin-left:-200px; /*negative half the width */
 
+    width:400px;
+    height:30px;
+}
+    
 
 .clearfix {
   *zoom: 1;

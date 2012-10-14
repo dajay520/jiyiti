@@ -166,8 +166,8 @@ $(function () {
                    title: {
                        text: '体重 (kg)'
                    },
-				   max: <%=@data.max%>,
-                   min: <%=@data.min%>,
+				   max: <%=(@data.max==nil)?0:@data.max%>,
+                   min: <%=(@data.min==nil)?0:@data.min%>,
                    minorGridLineWidth: 0,
                    gridLineWidth: 1,
                    alternateGridColor: null
