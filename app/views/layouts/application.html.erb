@@ -71,3 +71,11 @@
     </footer>
 </body>
 </html>
+<script type="text/javascript">
+$(document).ready(function() {
+	if(parseInt($("body").css("min-height"))<parseInt($(document).height())){
+		$("body").css("min-height",$(document).height());
+		//alert($("body").css("min-height"));
+	} 
+});
+</script>
