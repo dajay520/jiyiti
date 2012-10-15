@@ -26,7 +26,7 @@ class LoseweightsController < ApplicationController
       redirect_to "/loseweights"
       
     end
-    notice='密码不对，真蠢。'
+    notice='密码不对。'
   end
   
   def qqlogin
@@ -168,7 +168,7 @@ class LoseweightsController < ApplicationController
 
     respond_to do |format|
       if @loseweight.update_attributes(params[:loseweight])
-        format.html { redirect_to @loseweight, notice: '更新日志成功，小蠢耸.' }
+        format.html { redirect_to @loseweight, notice: '更新日志成功.' }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
