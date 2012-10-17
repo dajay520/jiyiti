@@ -38,5 +38,5 @@ Reduce::Application.configure do
   #config.serve_static_assets = true
   #config.static_cache_control = "public, max-age=172800"
   
-  config.assets.digest = true
+  config.assets.digest = false
 end

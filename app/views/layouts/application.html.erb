@@ -26,17 +26,13 @@
     <div class="navbar navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
+          
 		 <a class="brand" style="padding:0px"><img src="/img/logo1.png" width="48px" height="45px" ></a>
           <a class="brand" href="#" >
           	记忆体
           </a>
 			
-          <div class="nav-collapse pull-right">
+          <div class="pull-right">
             <% if session[:userInfo]%>
 						<a class="brand" style="padding-bottom:0px"><img src="<%=session[:userInfo]['figureurl']%>" ><%=session[:userInfo]['nickname']%></img></a>		
 			<ul class="nav">
