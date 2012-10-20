@@ -2,19 +2,20 @@
 <html>
 <head>
   <title>
-  	记忆体beta1.0
+  	记忆体beta1.5
   </title>
   <meta name="description"
       content="ruby rails 体重 记录 身体属性记录 曲线 图表 &hellip;">
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <%= stylesheet_link_tag    "styles", :media => "all" %>
   <%= stylesheet_link_tag    "bootstrap-responsive", :media => "all" %>
-
+  <%= stylesheet_link_tag    "fullcalendar", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= javascript_include_tag "highcharts" %>
   <%= javascript_include_tag "bootstrap-modal" %>
   <%= javascript_include_tag "bootstrap-tooltip" %>
   <%= javascript_include_tag "bootstrap-transition" %>
+  <%= javascript_include_tag "fullcalendar.min" %>
   <%= csrf_meta_tags %>
 
 <script src="http://mat1.gtimg.com/app/openjs/openjs.js#autoboot=no&debug=no"></script>
@@ -34,7 +35,8 @@
 			
           <div class="pull-right">
             <% if session[:userInfo]%>
-						<a class="brand" style="padding-bottom:0px"><img src="<%=session[:userInfo]['figureurl']%>" ><%=session[:userInfo]['nickname']%></img></a>		
+						<a class="brand" style="padding:0px;"><img style="padding:0px;height:45px;width:45px;"  src="<%=session[:userInfo]['figureurl']%>" ><%=session[:userInfo]['nickname']%></img></a>
+								
 			<ul class="nav">
 			<li>
 			<a href='/loseweights/loginout'>退出</a>
