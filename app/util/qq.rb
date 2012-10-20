@@ -21,11 +21,18 @@ APPID= '100295213'#'100295213'
 REDURL='&redirect_uri=http://xiyix.com/loseweights/qqlogin'
 APPKEY='3cfeb3faf4aa0b1e86fd1f9246f7074a'
 
+
+OPEN_GETUSERINFO= 'http://openapi.tencentyun.com/v3/user/get_info?' #'http://119.147.19.43/v3/user/get_info?'
+OPEN_APPID='100650681'
+OPEN_APPKEY='208cab1f3a57a2d4bf8db2c29096c97d'
+
 require 'net/http'
 require 'uri'
 require 'open-uri'
 require 'rest-client'
 require 'multi_json'
+require 'hmac-sha1'
+
 
 class Qq
 	attr_accessor :token,:openid,:auth
@@ -85,6 +92,17 @@ class Qq
 	def get_user_info(auth)
 		MultiJson.decode(open(GETUSERINFOURL + auth).read.force_encoding('utf-8'))
 	end
+  
+  def get_open_user_info(openid,openkey,pf,ip)
+    prefix = 'GET&%2Fv3%2Fuser%2Fget_info&'
+    params_req = 'appid='+OPEN_APPID + '&format=json&ip='+ip+'&openid='+openid + '&openkey='+openkey+'&pf='+pf
+    signature = prefix + CGI.escape(params_req)
+    hmac = HMAC::SHA1.new(OPEN_APPKEY+'&')
+    hmac.update(signature)
+    result_key= CGI.escape(Base64.strict_encode64("#{hmac.digest}"))
+    uri = OPEN_GETUSERINFO + params_req+'&sig='+result_key
+    MultiJson.decode(open(uri).read.force_encoding('utf-8'))
+  end
 
 	#发表一条说说到QQ空间
 	def add_topic(auth,type)

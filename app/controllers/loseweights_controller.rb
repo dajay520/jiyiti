@@ -49,8 +49,35 @@ class LoseweightsController < ApplicationController
       session[:user] = usr
     else
       session[:user] = quser[0].user
+      
+      puts quser[0].user
     end
     session[:userInfo] = qq.get_user_info(qq.auth)
+    redirect_to "/loseweights"
+  end
+  
+  def qzonelogin
+    q = Qq.new
+    quser = q.get_open_user_info(params[:openid],params[:openkey],params[:pf],request.remote_ip)
+    user = Qquser.where(:open_id=>params[:openid])
+    if user.size==0
+      usr = User.new
+      usr.name=quser["nickname"]
+      usr.save
+      
+      qquser = Qquser.new
+      qquser.open_id = params[:openid]
+      qquser.token=params[:openkey]
+      qquser.user_id=usr.id
+      qquser.save
+      session[:user] = usr
+    else
+      session[:user] = user[0].user
+      puts 'puts quser:'
+      puts  user[0].user
+    end
+    session[:userInfo] = quser
+    puts quser
     redirect_to "/loseweights"
   end
   

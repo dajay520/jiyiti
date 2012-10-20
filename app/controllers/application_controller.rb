@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :authorize,:except => [:login,:qqlogin]
+  before_filter :authorize,:except => [:login,:qqlogin,:qzonelogin]
   protected
   
   def authorize

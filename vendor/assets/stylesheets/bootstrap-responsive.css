@@ -21,7 +21,12 @@ body {
   background-position: bottom;
   min-height:750px;
 }
-
+.calbg{
+background:url('/img/ccj.png');
+filter:"progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
+-moz-background-size:100% 100%;
+	background-size:100% 100%;
+}
 .footer{
     position:absolute;
     bottom:0;

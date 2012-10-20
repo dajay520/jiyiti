@@ -5,6 +5,7 @@ Reduce::Application.routes.draw do
       get :login
       get :qqlogin
       get :loginout
+      get :qzonelogin
     end
   end
 
