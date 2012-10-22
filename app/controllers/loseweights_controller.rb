@@ -177,6 +177,7 @@ class LoseweightsController < ApplicationController
     @loseweight = Loseweight.new(params[:loseweight])
     @loseweight.gmt_create=Time.new.utc
     @loseweight.user_id=session[:user].id
+    @loseweight.remark.delete "-"
     respond_to do |format|
       if @loseweight.save
         format.html { redirect_to "/loseweights" }
@@ -195,7 +196,7 @@ class LoseweightsController < ApplicationController
 
     respond_to do |format|
       if @loseweight.update_attributes(params[:loseweight])
-        format.html { redirect_to @loseweight, notice: '更新日志成功.' }
+        format.html { redirect_to "/loseweights" }
         format.json { head :no_content }
       else
         format.html { render action: "edit" }
