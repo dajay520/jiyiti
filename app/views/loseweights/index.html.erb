@@ -333,10 +333,8 @@ $(function () {
 			        //alert('Event: ' + calEvent.title);
 			        //alert('Coordinates: ' + jsEvent.pageX + ',' + jsEvent.pageY);
 			        //alert('View: ' + view.name);
-					var action_url = $("#modify_loseweight").attr('action');
-					var delete_url = $("#delete_loseweight").attr('href');
-					$("#delete_loseweight").attr('href',delete_url+calEvent.lwid);
-					$("#modify_loseweight").attr('action',action_url+calEvent.lwid);
+					$("#delete_loseweight").attr('href',"/loseweights/"+calEvent.lwid);
+					$("#modify_loseweight").attr('action',"/loseweights/"+calEvent.lwid);
 					$("#modify_loseweight_remark").attr('value',calEvent.hinter);
 					$("#modify_loseweight_weight").attr('value',calEvent.weight);
 					$("#modify_loseweight_update_date_1i").val(calEvent.start.getFullYear()).attr('selected',true);
