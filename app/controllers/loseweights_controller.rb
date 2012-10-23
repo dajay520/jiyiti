@@ -57,8 +57,13 @@ class LoseweightsController < ApplicationController
   end
   
   def qzonelogin
+    session[:iscomefromqzone]='yes'
     q = Qq.new
     quser = q.get_open_user_info(params[:openid],params[:openkey],params[:pf],request.remote_ip)
+    unless quser
+      redirect_to "/loseweights"
+      return
+    end
     user = Qquser.where(:open_id=>params[:openid])
     if user.size==0
       usr = User.new
