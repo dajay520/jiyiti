@@ -42,12 +42,13 @@
 			<a href='/loseweights/loginout'>退出</a>
 			</li>
 			</ul>
-			<% else %>
+			<% else unless session[:iscomefromqzone]%>
 					
 			<a  class="brand" style="padding-bottom:0px" href="https://graph.qq.com/oauth2.0/authorize?response_type=code&client_id=100295213&redirect_uri=http://xiyix.com/loseweights/qqlogin">
 				<img src='/img/qq_logo_3.png'>
 			</a>
-			<% end %>
+			<% end
+			 end %>
           </div>
           <div class="nav-collapse">
             <ul class="nav">
@@ -65,7 +66,7 @@
 	</div>
 
     <footer class="footer">
-      <p>&copy; 记忆体 2012  contact:dajay520@gmail.com </p>
+      <p style="width:500px;">&copy; 记忆体 2012  声明:此应用由 大杰 提供，联系客服QQ：14011033 </p>
     </footer>
 </body>
 </html>

@@ -94,6 +94,9 @@ class Qq
 	end
   
   def get_open_user_info(openid,openkey,pf,ip)
+    if !openid || !openkey || !pf || !ip
+      return nil
+    end
     prefix = 'GET&%2Fv3%2Fuser%2Fget_info&'
     params_req = 'appid='+OPEN_APPID + '&format=json&ip='+ip+'&openid='+openid + '&openkey='+openkey+'&pf='+pf
     signature = prefix + CGI.escape(params_req)
