@@ -5,6 +5,7 @@ require 'json'
 require 'qq'
 class LoseweightsController < ApplicationController
   def authorize
+    response.headers['P3P'] = "CP=\"CAO PSA OUR\""
     if cookies[:remember_me]
       puts 'admin tianjj'
       session[:admin] = 'admin'
@@ -58,6 +59,7 @@ class LoseweightsController < ApplicationController
   
   def qzonelogin
     session[:iscomefromqzone]='yes'
+    response.headers['P3P'] = "CP=\"CAO PSA OUR\""
     q = Qq.new
     quser = q.get_open_user_info(params[:openid],params[:openkey],params[:pf],request.remote_ip)
     unless quser
