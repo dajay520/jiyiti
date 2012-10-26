@@ -87,10 +87,10 @@ ondragenter="return false"  style="width:110px;height:30px;font-size:30px;ime-mo
 				<option value="30">30日</option>
 				<option value="31">31日</option>
 				</select>
-
+				<%unless session[:iscomefromqzone]%>
 	                <h4>记录点什么:</h4>
 	                <textarea id="loseweight_remark" name="loseweight[remark]" class="input-xlarge" id="textarea" rows="3" style="width:400px;"></textarea>
-				
+				<%end%>
 				    <hr>
 
 	               
@@ -180,10 +180,10 @@ ondragenter="return false"  style="width:110px;height:30px;font-size:30px;ime-mo
 				<option value="30">30日</option>
 				<option value="31">31日</option>
 				</select>
-
+				<%unless session[:iscomefromqzone]%>
 	                <h4>记录点什么:</h4>
 	                <textarea id="modify_loseweight_remark" name="loseweight[remark]" class="input-xlarge" id="textarea" rows="3" style="width:400px;"></textarea>
-				
+				<%end%>
 				    <hr>
 
 	               
