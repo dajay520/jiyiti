@@ -184,7 +184,9 @@ class LoseweightsController < ApplicationController
     @loseweight = Loseweight.new(params[:loseweight])
     @loseweight.gmt_create=Time.new.utc
     @loseweight.user_id=session[:user].id
-    @loseweight.remark.delete "-"
+    if @loseweight.remark
+    	@loseweight.remark.delete "-"
+  	end
     respond_to do |format|
       if @loseweight.save
         format.html { redirect_to "/loseweights" }
