@@ -356,7 +356,7 @@ $(function () {
 				<%end%>
 				{
 					title:'         <%=loseweight.weight%>kg ',
-					hinter:' <%=loseweight.remark.delete "\n"%>',
+					hinter:'<%if loseweight.remark%><%=loseweight.remark.delete "\n"%><%end%>',
 					weight: '<%=loseweight.weight%>',
 					lwid: '<%=loseweight.id%>',
 					start: new Date(<%=loseweight.update_date.strftime('%Y')%>,<%=loseweight.update_date.strftime('%m')%>-1,<%=loseweight.update_date.strftime('%d')%>)
