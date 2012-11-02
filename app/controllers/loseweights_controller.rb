@@ -3,6 +3,7 @@ require 'googlecharts'
 require "open-uri"
 require 'json'
 require 'qq'
+require 'digest'  
 class LoseweightsController < ApplicationController
   def authorize
     response.headers['P3P'] = "CP=\"CAO PSA OUR\""
@@ -48,9 +49,10 @@ class LoseweightsController < ApplicationController
       qquser.user_id=usr.id
       qquser.save
       session[:user] = usr
+      session[:uesr_detail]=qquser
     else
       session[:user] = quser[0].user
-      
+      session[:user_detail]=quser[0]
       puts quser[0].user
     end
     session[:userInfo] = qq.get_user_info(qq.auth)
@@ -78,14 +80,17 @@ class LoseweightsController < ApplicationController
       qquser.user_id=usr.id
       qquser.save
       session[:user] = usr
+      session[:user_detail]=qquser
     else
       session[:user] = user[0].user
+      session[:user_detail]=user[0]
       puts 'puts quser:'
       puts  user[0].user
     end
     session[:userInfo] = quser
     puts quser
     redirect_to "/loseweights"
+ 
   end
   
   def loginout
@@ -132,6 +137,8 @@ class LoseweightsController < ApplicationController
         @img_url=fix_bug(@img_url)
       end
     end
+    @img_file_name=Digest::MD5.hexdigest(session[:user_detail].open_id+Time.now.to_f.to_s)
+    @new_img_url = 'http://www.xiyix.com:8080/highcharts-export/img/' +@img_file_name
     
     #@img_url = Gchart.line(:data => [0, 40, 10, 70, 20],:axis_with_labels => ['y'])
     respond_to do |format|
