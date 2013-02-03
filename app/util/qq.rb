@@ -27,6 +27,8 @@ OPEN_WORD_FILTER = 'http://119.147.19.43/v3/csec/word_filter'
 OPEN_APPID='100650681'
 OPEN_APPKEY='208cab1f3a57a2d4bf8db2c29096c97d'
 
+OPEN_ACCESS_TOKEN='http://openapi.qzone.qq.com/oauth/qzoneoauth_access_token?oauth_version=1.0&oauth_signature_method=HMAC-SHA1'
+
 require 'net/http'
 require 'uri'
 require 'open-uri'
@@ -94,6 +96,7 @@ class Qq
 		MultiJson.decode(open(GETUSERINFOURL + auth).read.force_encoding('utf-8'))
 	end
   
+  #获取openqq用户信息
   def get_open_user_info(openid,openkey,pf,ip)
     if !openid || !openkey || !pf || !ip
       return nil
@@ -129,6 +132,11 @@ class Qq
                           :pf=>pf,
                           :userip=>ip,
                           :sig=>sig	))
+  end
+  
+  #获取openapi登录的accesstoken
+  def open_access_token
+    access_token_url = OPEN_ACCESS_TOKEN + '&oauth_timestamp=' + Time.now.to_i + '&oauth_nonce=' + rand(999999) + '&oauth_consumer_key='+OPEN_APPID + ''
   end
 
 	#发表一条说说到QQ空间
