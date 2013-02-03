@@ -101,6 +101,11 @@ class LoseweightsController < ApplicationController
   # GET /loseweights
   # GET /loseweights.json
   def index
+    if !session[:user]
+      render :login
+      puts 'no login'
+      return
+    end
     puts 'session_user:'
     puts session[:user]
     @all_loseweights = Loseweight.where(:user_id=>session[:user].id).order('update_date,created_at')
