@@ -12,7 +12,6 @@ gem 'googlecharts'
 gem 'will_paginate'
 gem 'rest-client'
 gem 'ruby-hmac'
-gem 'capistrano-nginx'
 
 # Gems used only for assets and not required
 # in production environments by default.
