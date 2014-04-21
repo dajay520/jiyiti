@@ -24,9 +24,10 @@ APPKEY='3cfeb3faf4aa0b1e86fd1f9246f7074a'
 
 OPEN_GETUSERINFO= 'http://openapi.tencentyun.com/v3/user/get_info?' #'http://119.147.19.43/v3/user/get_info?'
 OPEN_WORD_FILTER = 'http://119.147.19.43/v3/csec/word_filter'
-OPEN_APPID='100650681'
-OPEN_APPKEY='208cab1f3a57a2d4bf8db2c29096c97d'
-
+#OPEN_APPID='100650681'
+OPEN_APPID='101068071'
+#OPEN_APPKEY='208cab1f3a57a2d4bf8db2c29096c97d'
+OPEN_APPKEY='266e131611f7e447f6308075d6e0f819'
 OPEN_ACCESS_TOKEN='http://openapi.qzone.qq.com/oauth/qzoneoauth_access_token?oauth_version=1.0&oauth_signature_method=HMAC-SHA1'
 
 require 'net/http'
