@@ -18,7 +18,7 @@ GETIDOLLISTURL='https://graph.qq.com/relation/get_idollist?'
 ADDIDOLURL='https://graph.qq.com/relation/add_idol'
 DELIDOLURL='https://graph.qq.com/relation/del_idol'
 APPID= '100295213'#'100295213'
-REDURL='&redirect_uri=http://xiyix.com/loseweights/qqlogin'
+REDURL='&redirect_uri=http://www.heasenbug.me/loseweights/qqlogin'
 APPKEY='3cfeb3faf4aa0b1e86fd1f9246f7074a'
 
 
