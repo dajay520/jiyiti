@@ -49,7 +49,7 @@ class LoseweightsController < ApplicationController
       qquser.user_id=usr.id
       qquser.save
       session[:user] = usr
-      session[:uesr_detail]=qquser
+      session[:user_detail]=qquser
     else
       session[:user] = quser[0].user
       session[:user_detail]=quser[0]
@@ -108,6 +108,8 @@ class LoseweightsController < ApplicationController
     end
     puts 'session_user:'
     puts session[:user]
+    puts 'session_user_detail:'
+    puts session[:user_detail]
     @all_loseweights = Loseweight.where(:user_id=>session[:user].id).order('update_date,created_at')
     @loseweights = Loseweight.where(:user_id=>session[:user].id).order('update_date desc').order('created_at desc').paginate(:page=>params[:page],:per_page => 7)
     @data = []
