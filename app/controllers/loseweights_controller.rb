@@ -145,7 +145,7 @@ class LoseweightsController < ApplicationController
       end
     end
     @img_file_name=Digest::MD5.hexdigest(session[:user_detail].open_id+Time.now.to_f.to_s)
-    @new_img_url = 'http://www.xiyix.com:8080/highcharts-export/img/' +@img_file_name
+    @new_img_url = 'http://heasenbug.me:8080/highcharts-export/export/' +@img_file_name + '.png'
     
     #@img_url = Gchart.line(:data => [0, 40, 10, 70, 20],:axis_with_labels => ['y'])
     respond_to do |format|
